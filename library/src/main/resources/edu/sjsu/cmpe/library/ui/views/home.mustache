@@ -1,0 +1,56 @@
+<html>
+        <head>
+            <title>Home</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+        </head>
+        <body>
+            <div class="container">
+                <div class="jumbotron">
+                    <!-- calls getBooks() from HomeResource -->
+                    <table class="table table-hover">
+                    {{#books}}
+                        <tr>
+                        	<td>{{isbn}}</td>
+							<td><img class="img-thumbnail" height="92" width="72" src="{{coverimage}}"></td>
+							<td>{{title}}</td>
+							<td>{{category}}</td>
+							<td>{{status}}</td>
+							<td><button id ={{isbn}} type="button" class="btn btn-primary" value={{status}} >Report Lost</button></td>
+							<script type="text/javascript">
+							//	document.write($($(":button").value));
+								//$(document).ready(function(){
+  									//$("isbn").click(function(){
+    								//$(this).disabled = true;
+  									//});
+								//});
+								//	document.write(isbn);
+									//$(document).ready(function() {
+   									//			 checkEnableSubmit();
+									//});
+									//function checkEnableSubmit(var isbn, var status) {
+  										//if (status == "lost") // some logic to determine if it is ok to go
+   											//	 document.getElementById(isbn).disabled = true;
+  												// else // in case it was enabled and the user changed their mind
+    											//document.getElementById(isbn).disabled = false;
+													//}
+									</script>
+                        </tr>
+                    {{/books}}
+                    </table>
+                </div>
+            </div> <!-- end of container -->
+           
+            <!-- script tags -->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="//code.jquery.com/jquery.js"></script>
+            <!-- Latest compiled and minified JavaScript -->            
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+            
+            <!-- application ui scripts -->
+			<script src="../assets/js/app.js"></script>
+        </body>
+</html>
